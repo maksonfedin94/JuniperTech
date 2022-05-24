@@ -14,32 +14,30 @@ namespace Notes.Services
     public class RestClient : IRestClient
     {
         private readonly HttpClient httpClient;
-        private readonly CancellationToken token;
-        private readonly Dictionary<string, string> baseHeade;
+        private readonly Dictionary<string, string> baseHeader;
 
         public RestClient()
         {
             var handler = new HttpClientHandler();
             httpClient = new HttpClient(handler);
-            token = default;
-            baseHeade = new Dictionary<string, string>() { { "Authorization", $"Bearer {Constants.ApiKey}" } };
+            baseHeader = new Dictionary<string, string>() { { "Authorization", $"Bearer {Constants.ApiKey}" } };
         }
 
-        public async Task<TryResult<TResponse>> GetAsync<TResponse>(string url)
+        public async Task<TryResult<TResponse>> GetAsync<TResponse>(string url, CancellationToken token = default)
         {
             try
             {
                 using (var request = new HttpRequestMessage(HttpMethod.Get, url))
                 {
-                    if (baseHeade != null)
+                    if (baseHeader != null)
                     {
-                        foreach (var customHeader in baseHeade)
+                        foreach (var customHeader in baseHeader)
                         {
                             request.Headers.Add(customHeader.Key, customHeader.Value);
                         }
                     }
 
-                    using (var response = await httpClient.SendAsync(request).ConfigureAwait(false))
+                    using (var response = await httpClient.SendAsync(request, token).ConfigureAwait(false))
                     {
                         string responseJson = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
@@ -60,7 +58,7 @@ namespace Notes.Services
             }
         }
 
-        public async Task<TryResult<TResponse>> PostAsync<TRequest, TResponse>(TRequest data, string url)
+        public async Task<TryResult<TResponse>> PostAsync<TRequest, TResponse>(TRequest data, string url, CancellationToken token = default)
         {
             try
             {
@@ -71,9 +69,9 @@ namespace Notes.Services
 
                     request.Content = new StringContent(jsonSerialization, Encoding.UTF8, "application/json");
 
-                    if (baseHeade != null)
+                    if (baseHeader != null)
                     {
-                        foreach (var customHeader in baseHeade)
+                        foreach (var customHeader in baseHeader)
                         {
                             request.Headers.Add(customHeader.Key, customHeader.Value);
                         }
