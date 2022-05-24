@@ -567,11 +567,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maxfedin/Downloads/App/Notes/Notes.csproj",
+      "projectUniqueName": "/Users/maxfedin/JuniperTech/Notes/Notes.csproj",
       "projectName": "Notes",
-      "projectPath": "/Users/maxfedin/Downloads/App/Notes/Notes.csproj",
+      "projectPath": "/Users/maxfedin/JuniperTech/Notes/Notes.csproj",
       "packagesPath": "/Users/maxfedin/.nuget/packages/",
-      "outputPath": "/Users/maxfedin/Downloads/App/Notes/obj/",
+      "outputPath": "/Users/maxfedin/JuniperTech/Notes/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/maxfedin/.config/NuGet/NuGet.Config"

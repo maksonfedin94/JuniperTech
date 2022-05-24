@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="NUnit" />
+    <None Remove="NUnit3TestAdapter" />
+    <None Remove="Microsoft.NET.Test.Sdk" />
+    <None Remove="Moq" />
+    <None Remove="Xamarin.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Notes\Notes.csproj" />
+  </ItemGroup>
+</Project>

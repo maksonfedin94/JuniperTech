@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "46MMhoA9+W87UuxR6F4CyRM2B2Cvo3PskEhvQ2Hqc9I6t1d6wdMg/pxD0LrKn4c68tIf0QRkpTcB/sfiGgxDDg==",
+  "dgSpecHash": "R2Z5hS+ajReHgeMdV4QkTjIHHHrc6Evn54tOUdH0W2zHneeo/if+NvAMsmcbfw0PscV765BT0l7n06+t/wVAWA==",
   "success": true,
-  "projectFilePath": "/Users/maxfedin/Downloads/App/Notes/Notes.csproj",
+  "projectFilePath": "/Users/maxfedin/JuniperTech/Notes/Notes.csproj",
   "expectedPackageFiles": [
     "/Users/maxfedin/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/maxfedin/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",

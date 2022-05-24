@@ -13,6 +13,7 @@ namespace Notes
 
             DependencyService.Register<IRestClient, RestClient>();
             DependencyService.Register<ITaxService, TaxService>();
+            DependencyService.Register<IDialogService, DialogService>();
         }
 
         protected override void OnStart()

@@ -3214,11 +3214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maxfedin/Downloads/App/Notes.Android/Notes.Android.csproj",
+      "projectUniqueName": "/Users/maxfedin/JuniperTech/Notes.Android/Notes.Android.csproj",
       "projectName": "Notes.Android",
-      "projectPath": "/Users/maxfedin/Downloads/App/Notes.Android/Notes.Android.csproj",
+      "projectPath": "/Users/maxfedin/JuniperTech/Notes.Android/Notes.Android.csproj",
       "packagesPath": "/Users/maxfedin/.nuget/packages/",
-      "outputPath": "/Users/maxfedin/Downloads/App/Notes.Android/obj/",
+      "outputPath": "/Users/maxfedin/JuniperTech/Notes.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -3235,8 +3235,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "/Users/maxfedin/Downloads/App/Notes/Notes.csproj": {
-              "projectPath": "/Users/maxfedin/Downloads/App/Notes/Notes.csproj"
+            "/Users/maxfedin/JuniperTech/Notes/Notes.csproj": {
+              "projectPath": "/Users/maxfedin/JuniperTech/Notes/Notes.csproj"
             }
           }
         }

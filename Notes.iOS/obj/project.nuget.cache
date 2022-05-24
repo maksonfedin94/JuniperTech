@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oo8F00bFy9+tchHqcy86BuhC0FD9vJyML1VR6r1FHi0e37age7p0cK5SJGAX2C8jo6kPfljjyJXiHLwidKf4xA==",
+  "dgSpecHash": "AbvAqnAiSirbux2NO9eC3ZUBqKwnFv/jdCvStb7e7k4hZgG1QUrscjY8gfH9uvMOi/t0XIF6Em6r58vHhYDpcQ==",
   "success": true,
-  "projectFilePath": "/Users/maxfedin/Downloads/App/Notes.iOS/Notes.iOS.csproj",
+  "projectFilePath": "/Users/maxfedin/JuniperTech/Notes.iOS/Notes.iOS.csproj",
   "expectedPackageFiles": [
     "/Users/maxfedin/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/maxfedin/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",

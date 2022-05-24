@@ -13,6 +13,7 @@ namespace Notes.ViewModels
         List<string> errors = new List<string>();
         List<LineItem> lineItems = new List<LineItem>();
         readonly ITaxService taxService;
+        readonly IDialogService dialogService;
 
         public ICommand TaxRateCommand { get; set; }
         public ICommand AddOrderCommand { get; set; }
@@ -139,9 +140,10 @@ namespace Notes.ViewModels
             }
         }
 
-        public SalesTaxViewModel()
+        public SalesTaxViewModel(ITaxService taxService = null, IDialogService dialogService = null)
         {
-            taxService = DependencyService.Get<ITaxService>();
+            this.taxService = taxService ?? DependencyService.Get<ITaxService>();
+            this.dialogService = dialogService ?? DependencyService.Get<IDialogService>();
             TaxRateCommand = new Command(GetTaxRate);
             AddOrderCommand = new Command(AddOrder);
             OrderTaxRateCommand = new Command(GetOrderTaxRate);
@@ -159,20 +161,20 @@ namespace Notes.ViewModels
 
         async void GetTaxRate()
         {
-            if (string.IsNullOrEmpty(zipCode) || zipCode.Length < 5)
+            if (string.IsNullOrEmpty(ZipCode) || ZipCode.Length < 5)
             {
-                await App.Current.MainPage.DisplayAlert("Alert", "Zip code shpould be 5 digits", "OK");
+                _ = dialogService.ShowBaseDialog("Tax", "Zip code shpould be 5 digits", "OK");
                 return;
             }
 
-            var res = await taxService.GetTaxForLocation(zipCode, string.IsNullOrEmpty(CountryAbbreviation) ? "US" : CountryAbbreviation);
+            var res = await taxService.GetTaxForLocation(ZipCode, string.IsNullOrEmpty(CountryAbbreviation) ? "US" : CountryAbbreviation);
             if (res?.Rate == null)
             {
-                await App.Current.MainPage.DisplayAlert("Alert", "Wow something went wrong", "OK");
+                _ = dialogService.ShowBaseDialog("Tax", "Wow something went wrong", "OK");
                 return;
             }
 
-            _ = App.Current.MainPage.DisplayAlert("Alert", $"State Tax Rate Is {res.Rate.StateRate}\nCounty Tax Rate is {res.Rate.CityRate}\nCombined Tax Rate is {res.Rate.CombinedRate}", "OK");
+            _ = dialogService.ShowBaseDialog("Tax", $"State Tax Rate Is {res.Rate.StateRate}\nCounty Tax Rate is {res.Rate.CityRate}\nCombined Tax Rate is {res.Rate.CombinedRate}", "OK");
         }
 
         void AddOrder()
@@ -183,7 +185,7 @@ namespace Notes.ViewModels
                 UnitPrice = Convert.ToDouble(OrderPrice)
             });
 
-            _ = App.Current.MainPage.DisplayAlert("Alert", $"Order has been added", "OK");
+            _ = dialogService.ShowBaseDialog("Tax", $"Order has been added", "OK");
             OrderQuantity = string.Empty;
             OrderPrice = string.Empty;
         }
@@ -192,7 +194,7 @@ namespace Notes.ViewModels
         {
             if (!IsOrderValid() && errors.Any())
             {
-                _ = App.Current.MainPage.DisplayAlert("Alert", $"Please solve errors below:\n{string.Join("\n", errors)}", "OK");
+                _ = dialogService.ShowBaseDialog("Tax", $"Please solve errors below:\n{string.Join("\n", errors)}", "OK");
                 return;
             }
 
@@ -223,7 +225,7 @@ namespace Notes.ViewModels
 
             ClearFields();
 
-            _ = App.Current.MainPage.DisplayAlert("Alert", $"Total Tax for order is {res.Tax.AmountToCollect}", "OK");
+            _ = dialogService.ShowBaseDialog("Tax", $"Total Tax for order is {res.Tax.AmountToCollect}", "OK");
         }
 
         // ugly validator

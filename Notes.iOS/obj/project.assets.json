@@ -1054,11 +1054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maxfedin/Downloads/App/Notes.iOS/Notes.iOS.csproj",
+      "projectUniqueName": "/Users/maxfedin/JuniperTech/Notes.iOS/Notes.iOS.csproj",
       "projectName": "Notes.iOS",
-      "projectPath": "/Users/maxfedin/Downloads/App/Notes.iOS/Notes.iOS.csproj",
+      "projectPath": "/Users/maxfedin/JuniperTech/Notes.iOS/Notes.iOS.csproj",
       "packagesPath": "/Users/maxfedin/.nuget/packages/",
-      "outputPath": "/Users/maxfedin/Downloads/App/Notes.iOS/obj/",
+      "outputPath": "/Users/maxfedin/JuniperTech/Notes.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1075,8 +1075,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/maxfedin/Downloads/App/Notes/Notes.csproj": {
-              "projectPath": "/Users/maxfedin/Downloads/App/Notes/Notes.csproj"
+            "/Users/maxfedin/JuniperTech/Notes/Notes.csproj": {
+              "projectPath": "/Users/maxfedin/JuniperTech/Notes/Notes.csproj"
             }
           }
         }

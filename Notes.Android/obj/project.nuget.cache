@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O7UFKsEaFOZjTHachAmgi/ywxTsSARC5YU80wpXU/vAw6zE3bi4MhYdwkI/1Fl51e2L6ckvfhTvNpnkOvvh7EQ==",
+  "dgSpecHash": "QrrVG4+pdFYp3TD7bSvXv0cc3gyJTDQrprvDQY8YzGMBFwJN3/huQxXFBU/O88YohVGHsedWrjYKhm3/J7R7/A==",
   "success": true,
-  "projectFilePath": "/Users/maxfedin/Downloads/App/Notes.Android/Notes.Android.csproj",
+  "projectFilePath": "/Users/maxfedin/JuniperTech/Notes.Android/Notes.Android.csproj",
   "expectedPackageFiles": [
     "/Users/maxfedin/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/maxfedin/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
