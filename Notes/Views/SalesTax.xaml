@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.SalesTax"
+             Title="Sales Tax">
+    <!-- Layout children vertically -->
+    <ScrollView>
+        <StackLayout Margin="26">
+            <Label Text="Do you want get tax rate for your location? Please fill out all fields"/>
+            <Editor
+                Placeholder="Zip code"
+                HeightRequest="50"
+                Keyboard="Numeric"           
+                MaxLength="5"
+                Text="{Binding ZipCode}"/>
+            <Label Text="In case you are not from US, please enter Two-letter ISO country code (Example: UA for Ukraine, US for United States)"/>
+            <Editor
+                Placeholder="Country Abbreviation"
+                HeightRequest="50"
+                MaxLength="2"
+                Text="{Binding CountryAbbreviation}"/>
+            <Button
+                Text="Get Tax Rate"
+                Command="{Binding TaxRateCommand}"/>
+            <Label Text="Okay Okay Second part. Let's count tax for certain amount $" Margin="0,16,0,16"/>
+            <Label Text="Shipping address"/>
+            <Editor
+                Placeholder="Country (Two-letter ISO country code)"
+                HeightRequest="50"
+                MaxLength="2"
+                Text="{Binding ToCountry}"/>
+            <Editor
+                Placeholder="State (Two-letter ISO state code)"
+                HeightRequest="50"
+                MaxLength="2"
+                Text="{Binding ToState}"/>
+            <Editor
+                Placeholder="Zip"
+                HeightRequest="50"
+                Keyboard="Numeric"           
+                MaxLength="5"
+                Text="{Binding ToZip}"/>
+            <Editor
+                Placeholder="Shipping price"
+                HeightRequest="50"
+                Keyboard="Numeric"
+                Text="{Binding ShippingPrice}"/>
+            <Label Text="Store address"/>
+            <Editor
+                Placeholder="Country (Two-letter ISO country code)"
+                HeightRequest="50"
+                MaxLength="2"
+                Text="{Binding FromCountry}"/>
+            <Editor
+                Placeholder="State (Two-letter ISO state code)"
+                HeightRequest="50"
+                MaxLength="2"
+                Text="{Binding FromState}"/>
+            <Editor
+                Placeholder="Zip"
+                HeightRequest="50"
+                Keyboard="Numeric"           
+                MaxLength="5"
+                Text="{Binding FromZip}"/>
+            <Label Text="Order info"/>
+            <Editor
+                Placeholder="Order Quantity"
+                HeightRequest="50"
+                Keyboard="Numeric"
+                Text="{Binding OrderQuantity}"/>
+            <Editor
+                Placeholder="Order Price"
+                HeightRequest="50"
+                Keyboard="Numeric"
+                Text="{Binding OrderPrice}"/>
+            <Button
+                Text="Add another item to order"
+                Command="{Binding AddOrderCommand}"/>
+            <Button
+                Text="Calculate order tax rate"
+                Command="{Binding OrderTaxRateCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
